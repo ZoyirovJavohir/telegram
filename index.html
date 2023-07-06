@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="d-flex px-2 gap-1">
+      <div class="left bg-white p-3 rounded-3">
+        <h2 class="text-primary fw-bold">Chatty</h2>
+        <button
+          onclick="allUsers()"
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-border-all"></i> All
+        </button>
+        <button
+          onclick="users()"
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-user"></i> Users
+        </button>
+
+        <button
+          onclick="groups()"
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-users"></i> Groups
+        </button>
+        <button
+          onclick="channels()"
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-volume-off"></i> Channels
+        </button>
+        <button
+          onclick="bots()"
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-robot"></i> Bots
+        </button>
+        <button
+          class="btn border-0 text-secondary mt-3 d-flex align-items-center gap-2 fw-bold"
+        >
+          <i class="fa-solid fa-gears"></i> Settings
+        </button>
+      </div>
+      <div class="middle p-3 rounded-3 position-relative">
+        <h2 class="text-primary fw-bold">Messages</h2>
+        <div class="d-flex align-items-center">
+          <input
+            type="text"
+            placeholder="search"
+            class="rounded-3 border-0 p-2 form-control"
+            id="searchInput"
+          />
+          <button
+            onclick="search()"
+            class="btn border-0 bg-primary text-white ms-2"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <div id="arrayInfo" class=""></div>
+
+        <button
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          onclick="modal()"
+          class="d-none btn position-absolute position-sticky bottom-0 mt-3 bg-primary rounded-pill"
+          id="pen"
+        >
+          <i class="fa-2x text-white fa-solid fa-user-plus"></i>
+        </button>
+      </div>
+      <div class="right rounded-3"></div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5 fw-bold text-info"
+              id="exampleModalLabel"
+            >
+              + Contact
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button onclick="infoPlus()" type="button" class="btn btn-primary">
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary">Launch demo modal</button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body2"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./users.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

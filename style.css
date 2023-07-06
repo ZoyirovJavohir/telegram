@@ -1,0 +1,62 @@
+body {
+  background-color: rgb(199, 199, 233);
+}
+.left {
+  height: 100vh;
+  width: 10%;
+}
+.left button {
+  margin: 10px 0;
+}
+.left button:hover {
+  background-color: blue;
+  color: white !important;
+}
+.middle {
+  width: 25%;
+  height: 100vh;
+  background-color: white;
+  overflow-x: hidden;
+}
+.middle input {
+  background: rgb(199, 199, 233);
+}
+
+.color {
+  background-color: rgb(228, 225, 214);
+}
+.right {
+  width: 65%;
+  height: 100vh;
+  background-color: white;
+}
+.cursor {
+  cursor: pointer;
+}
+.borderr {
+  border: 2px solid;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(228, 225, 214);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(228, 225, 214);
+  width: 63.8%;
+}
+ul {
+  list-style: none;
+}
+
+.sendInfo {
+  height: 80vh;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+.bg {
+  background-color: rgb(228, 225, 214) !important;
+}
